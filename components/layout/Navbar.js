@@ -18,7 +18,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar-inner">
         <Link href="/" className="navbar-logo">
-          Haj_EbLiS
+          Pouria
         </Link>
 
         <nav className={`navbar-menu ${menuOpen ? "active" : ""}`}>

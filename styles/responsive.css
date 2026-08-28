@@ -27,3 +27,26 @@
     padding: 12px;
   }
 }
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 72px);
+    padding: 60px 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
