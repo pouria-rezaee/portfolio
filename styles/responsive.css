@@ -86,3 +86,18 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 768px) {
+  .project-details-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .project-details-image {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 50px;
+  }
+
+  .project-details-header {
+    margin-bottom: 40px;
+  }
+}
