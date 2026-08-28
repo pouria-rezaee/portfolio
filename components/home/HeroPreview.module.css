@@ -1,0 +1,842 @@
+/* =========================
+   Hero
+========================= */
+
+.hero {
+  min-height: 100vh;
+  padding: 130px 0 90px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: var(--color-surface);
+}
+
+/* =========================
+   Background
+========================= */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.08),
+    transparent 68%
+  );
+  filter: blur(25px);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  right: -100px;
+  bottom: -200px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.06), transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+/* =========================
+   Layout
+========================= */
+
+.heroLayout {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns:
+    minmax(250px, 1fr)
+    minmax(300px, 400px)
+    minmax(250px, 1fr);
+  align-items: center;
+  gap: clamp(30px, 4vw, 70px);
+}
+
+/* =========================
+   Right Side
+========================= */
+
+.rightSide {
+  direction: rtl;
+  text-align: right;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: #22c55e;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.12);
+}
+
+/* =========================
+   Title
+========================= */
+
+.title {
+  margin: 25px 0 14px;
+
+  color: var(--color-text);
+
+  font-size: clamp(2.4rem, 4vw, 4rem);
+
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+}
+
+.title strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--color-primary);
+}
+
+/* =========================
+   Typewriter
+========================= */
+
+.typewriter {
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 18px;
+
+  color: var(--color-text);
+
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+
+  font-weight: 700;
+}
+
+.typewriter i {
+  width: 3px;
+  height: 26px;
+
+  display: inline-block;
+
+  border-radius: 3px;
+
+  background: var(--color-primary);
+
+  animation: blink 0.9s infinite;
+}
+
+/* =========================
+   Description
+========================= */
+
+.description {
+  max-width: 570px;
+
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 1rem;
+
+  line-height: 2;
+}
+
+/* =========================
+   Center Visual
+========================= */
+
+.centerVisual {
+  position: relative;
+
+  width: 100%;
+  max-width: 400px;
+
+  height: 560px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto;
+
+  animation: imageReveal 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.glow {
+  position: absolute;
+
+  width: 350px;
+  height: 480px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(99, 102, 241, 0.15),
+    transparent 68%
+  );
+
+  filter: blur(30px);
+}
+
+/* =========================
+   Profile Image
+========================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 350px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 10px solid var(--color-surface);
+  background: var(--color-surface-light);
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.12);
+  animation: imageFloat 6s ease-in-out infinite;
+}
+
+.profileImage {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.imageOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.03),
+    transparent 40%,
+    rgba(0, 0, 0, 0.15)
+  );
+
+  pointer-events: none;
+}
+
+/* =========================
+   Floating Tech Badges
+========================= */
+
+.techBadge {
+  position: absolute;
+
+  padding: 8px 14px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 999px;
+
+  background: var(--color-surface);
+
+  color: var(--color-text);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  box-shadow: var(--shadow-md);
+
+  z-index: 3;
+
+  animation: techFloat 4s ease-in-out infinite;
+
+  backdrop-filter: blur(8px);
+}
+
+.techBadge.react {
+  top: 70px;
+  right: -20px;
+
+  color: #06b6d4;
+
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.techBadge.next {
+  top: 210px;
+  left: -35px;
+
+  color: #1f2937;
+
+  border-color: rgba(31, 41, 55, 0.2);
+}
+
+.techBadge.python {
+  bottom: 130px;
+  right: -30px;
+
+  color: #3776ab;
+
+  border-color: rgba(55, 118, 171, 0.3);
+}
+
+.techBadge.tailwind {
+  bottom: 45px;
+  left: -15px;
+
+  color: #06b6d4;
+
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* =========================
+   Left Side
+========================= */
+
+.leftSide {
+  direction: rtl;
+
+  animation: fadeUp 0.8s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 42px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 48px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius-md);
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  transition: all var(--transition-normal);
+
+  cursor: pointer;
+}
+
+.primaryButton {
+  gap: 10px;
+
+  background: var(--color-primary);
+
+  color: #fff;
+
+  box-shadow: var(--shadow-md);
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+
+  background: var(--color-primary-light);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.primaryButton span {
+  font-size: 1.15rem;
+
+  transition: transform var(--transition-fast);
+}
+
+.primaryButton:hover span {
+  transform: translateX(-4px);
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  color: var(--color-text);
+}
+
+.secondaryButton:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--color-primary);
+
+  color: var(--color-primary);
+}
+
+/* =========================
+   Section Header
+========================= */
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 14px;
+}
+
+.sectionHeader span {
+  color: var(--color-primary);
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+}
+
+.sectionHeader div {
+  flex: 1;
+
+  height: 1px;
+
+  background: var(--color-border);
+}
+
+.sectionHeader h3 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   Interests
+========================= */
+
+.interests {
+  margin-bottom: 30px;
+}
+
+.interestList {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.interestList span {
+  padding: 7px 12px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 999px;
+
+  background: var(--color-surface);
+
+  color: var(--color-text-muted);
+
+  font-size: 0.72rem;
+
+  transition: all var(--transition-fast);
+}
+
+.interestList span:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-primary);
+
+  color: var(--color-primary);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   Tech Section
+========================= */
+
+.techSection {
+  margin-top: 5px;
+}
+
+.techList {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.techItem {
+  padding: 7px 11px;
+
+  border-radius: 8px;
+
+  background: var(--color-surface-light);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  border: 1px solid transparent;
+
+  transition: all var(--transition-fast);
+}
+
+.techItem:hover {
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.techItem.react {
+  color: #06b6d4;
+
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.techItem.next {
+  color: #1f2937;
+
+  background: rgba(31, 41, 55, 0.06);
+}
+
+.techItem.python {
+  color: #3776ab;
+
+  background: rgba(55, 118, 171, 0.08);
+}
+
+.techItem.tailwind {
+  color: #06b6d4;
+
+  background: rgba(6, 182, 212, 0.08);
+}
+
+/* =========================
+   Scroll
+========================= */
+
+.scrollDown {
+  position: absolute;
+
+  bottom: 28px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  transition: color var(--transition-fast);
+}
+
+.scrollDown:hover {
+  color: var(--color-primary);
+}
+
+.scrollDown i {
+  font-size: 1rem;
+
+  animation: bounce 1.8s infinite;
+}
+
+/* =========================
+   Animations
+========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes imageFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes techFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1100px) {
+  .heroLayout {
+    grid-template-columns:
+      1fr
+      320px
+      1fr;
+
+    gap: 20px;
+  }
+
+  .imageWrapper {
+    width: 270px;
+    height: 430px;
+  }
+
+  .centerVisual {
+    height: 510px;
+  }
+
+  .techBadge.react {
+    right: -5px;
+  }
+
+  .techBadge.next {
+    left: -10px;
+  }
+
+  .techBadge.python {
+    right: -8px;
+  }
+
+  .techBadge.tailwind {
+    left: 5px;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 850px) {
+  .hero {
+    padding: 110px 0 70px;
+  }
+
+  .heroLayout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .centerVisual {
+    order: -1;
+
+    height: 460px;
+
+    margin-inline: auto;
+  }
+
+  .rightSide {
+    order: 1;
+
+    text-align: center;
+  }
+
+  .leftSide {
+    order: 2;
+
+    text-align: center;
+  }
+
+  .badge {
+    margin-inline: auto;
+  }
+
+  .description {
+    margin-inline: auto;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .sectionHeader {
+    justify-content: center;
+  }
+
+  .sectionHeader div {
+    max-width: 80px;
+  }
+
+  .interestList,
+  .techList {
+    justify-content: center;
+  }
+
+  .scrollDown {
+    display: none;
+  }
+}
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 500px) {
+  .hero {
+    padding: 90px 0 50px;
+  }
+
+  .centerVisual {
+    height: 380px;
+  }
+
+  .imageWrapper {
+    width: 220px;
+    height: 350px;
+
+    border-width: 4px;
+  }
+
+  .techBadge {
+    padding: 5px 10px;
+
+    font-size: 0.6rem;
+  }
+
+  .techBadge.react {
+    right: 10px;
+    top: 30px;
+  }
+
+  .techBadge.next {
+    left: 5px;
+    top: 150px;
+  }
+
+  .techBadge.python {
+    right: 5px;
+    bottom: 80px;
+  }
+
+  .techBadge.tailwind {
+    left: 10px;
+    bottom: 30px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}
+
+/* =========================
+   Reduced Motion
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .rightSide,
+  .leftSide,
+  .centerVisual,
+  .imageWrapper,
+  .techBadge,
+  .scrollDown i,
+  .typewriter i {
+    animation: none !important;
+  }
+}

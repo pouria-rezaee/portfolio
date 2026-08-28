@@ -1,8 +1,8 @@
-import Hero from "@/components/home/Hero";
+import Hero from "@/components/home/HeroPreview";
 import AboutPreview from "@/components/home/AboutPreview";
 import SkillsPreview from "@/components/home/SkillsPreview";
 import ProjectsPreview from "@/components/home/ProjectsPreview";
-import Contact from "@/components/home/Contact";
+import Contact from "@/components/home/ContactPreview";
 
 export default function Home() {
   return (

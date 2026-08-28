@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Container from "@/components/layout/Container";
-import styles from "./Contact.module.css";
+import styles from "./ContactPreview.module.css";
 
 export default function Contact() {
   const [status, setStatus] = useState("");
@@ -49,8 +49,6 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className={styles.contactForm}>
-              <p className={styles.sectionLabel}>تماس با من</p>
-
               <h2>
                 بیایید با هم یک <span>چیز فوق‌العاده</span> بسازیم.
               </h2>

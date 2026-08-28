@@ -1,7 +1,6 @@
 @import "../styles/reset.css";
 @import "../styles/variables.css";
 @import "../styles/components.css";
-@import "../styles/responsive.css";
 
 html {
   scroll-behavior: smooth;
@@ -9,9 +8,26 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-vazirmatn), "Vazirmatn", sans-serif;
   background: var(--color-bg);
   color: var(--color-text);
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 * {

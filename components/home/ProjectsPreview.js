@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Container from "../layout/Container";
 import { projects } from "@/data/projects";
 import styles from "./ProjectsPreview.module.css";
@@ -11,8 +10,6 @@ export default function ProjectsPreview() {
       <Container>
         <div className={styles.heading}>
           <div>
-            <p className={styles.label}>پروژه‌ها</p>
-
             <h2 className={styles.title}>بعضی از کارهایی که ساخته‌ام.</h2>
 
             <p className={styles.description}>
@@ -20,11 +17,6 @@ export default function ProjectsPreview() {
               نرم‌افزار ساخته‌ام.
             </p>
           </div>
-
-          <Link href="/projects" className={styles.moreLink}>
-            مشاهده همه پروژه‌ها
-            <span>←</span>
-          </Link>
         </div>
 
         <div className={styles.projectsGrid}>
@@ -35,17 +27,26 @@ export default function ProjectsPreview() {
               }`}
               key={project.id}
             >
-              <Link
-                href={`/projects/${project.slug}`}
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.projectImage}
+                aria-label={project.title}
               >
-                <img src={project.image} alt={project.title} />
+                <div
+                  className={`${styles.projectImagePlaceholder} ${
+                    styles[`tone${(project.id % 3) + 1}`]
+                  }`}
+                  aria-hidden="true"
+                >
+                  <span>{project.title.slice(0, 1)}</span>
+                </div>
 
                 <div className={styles.imageOverlay}>
                   <span>مشاهده پروژه</span>
-                  <span>←</span>
                 </div>
-              </Link>
+              </a>
 
               <div className={styles.projectContent}>
                 <div className={styles.projectTop}>
@@ -68,13 +69,25 @@ export default function ProjectsPreview() {
                   ))}
                 </div>
 
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className={styles.projectLink}
-                >
-                  جزئیات پروژه
-                  <span>←</span>
-                </Link>
+                <div className={styles.projectActions}>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.projectLink}
+                  >
+                    مشاهده دمو
+                  </a>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.projectLink}
+                  >
+                    کد پروژه
+                  </a>
+                </div>
               </div>
             </article>
           ))}

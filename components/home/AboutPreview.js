@@ -1,23 +1,36 @@
-"use client";
-
 import Link from "next/link";
 import styles from "./AboutPreview.module.css";
 
-const highlights = [
+const stats = [
   {
-    number: "01",
+    number: "03+",
+    label: "سال تجربه",
+  },
+  {
+    number: "10+",
+    label: "پروژه شخصی",
+  },
+  {
+    number: "07",
+    label: "فناوری اصلی",
+  },
+];
+
+const journey = [
+  {
+    year: "01",
+    title: "علوم کامپیوتر",
+    description: "شروع مسیر با یادگیری مبانی برنامه‌نویسی و توسعه نرم‌افزار.",
+  },
+  {
+    year: "02",
     title: "توسعه وب",
-    description: "تمرکز اصلی من روی ساخت رابط‌های کاربری مدرن و سریع است.",
+    description: "تمرکز روی Frontend، React و ساخت محصولات وب مدرن.",
   },
   {
-    number: "02",
-    title: "UI / UX",
-    description: "به جزئیات طراحی و تجربه کاربری در کنار کدنویسی اهمیت می‌دهم.",
-  },
-  {
-    number: "03",
-    title: "یادگیری مداوم",
-    description: "در کنار وب، در مسیر یادگیری Python و Machine Learning هستم.",
+    year: "03",
+    title: "مسیر جدید",
+    description: "گسترش دانش در Python، داده و Machine Learning.",
   },
 ];
 
@@ -25,58 +38,103 @@ export default function AboutPreview() {
   return (
     <section className={styles.section} id="about">
       <div className="container">
-        <div className={styles.header}>
-          <div>
-            <span className={styles.eyebrow}>درباره من</span>
-
+        <div className={styles.top}>
+          <div className={styles.heading}>
             <h2 className={styles.title}>
-              ترکیب <span>تکنولوژی</span>، طراحی و یادگیری
+              من فقط کد نمی‌زنم،
+              <br />
+              <span>محصول می‌سازم.</span>
             </h2>
           </div>
 
-          <p className={styles.intro}>
-            من پوریا هستم؛ توسعه‌دهنده وب با تمرکز روی ساخت تجربه‌های دیجیتال
-            مدرن، کاربردی و چشم‌نواز.
-          </p>
+          <div className={styles.intro}>
+            <p>
+              من پوریا هستم؛ توسعه‌دهنده وب با تمرکز روی ساخت رابط‌های کاربری
+              مدرن، سریع و کاربردی.
+            </p>
+
+            <p>
+              چیزی که برای من اهمیت دارد، ترکیب تکنولوژی، طراحی و تجربه کاربری
+              برای تبدیل یک ایده به یک محصول واقعی است.
+            </p>
+          </div>
         </div>
 
-        <div className={styles.content}>
-          <div className={styles.story}>
-            <span className={styles.storyNumber}>01</span>
+        <div className={styles.mainGrid}>
+          <div className={styles.identity}>
+            <div className={styles.identityTop}>
+              <span className={styles.identityLabel}>SOFTWARE DEVELOPER</span>
 
-            <div>
-              <h3>مسیر من</h3>
+              <span className={styles.identityNumber}>01</span>
+            </div>
 
-              <p>
-                مسیر من از علوم کامپیوتر شروع شد و به توسعه وب و طراحی رابط
-                کاربری رسید. چیزی که برای من جذاب است، تبدیل یک ایده خام به
-                محصولی است که هم از نظر فنی درست باشد و هم تجربه خوبی برای کاربر
-                ایجاد کند.
-              </p>
+            <div className={styles.identityVisual}>
+              <div className={styles.codeSymbol}>&lt;/&gt;</div>
 
-              <p>
-                در کنار توسعه فرانت‌اند، در حال گسترش دانش خود در زمینه Python،
-                Machine Learning و حوزه‌های مرتبط با داده هستم.
-              </p>
+              <div className={`${styles.orbit} ${styles.orbitOne}`}></div>
+              <div className={`${styles.orbit} ${styles.orbitTwo}`}></div>
 
-              <Link href="/about" className={styles.moreLink}>
-                بیشتر درباره من
-                <span>←</span>
-              </Link>
+              <span className={`${styles.tech} ${styles.techReact}`}>
+                React
+              </span>
+
+              <span className={`${styles.tech} ${styles.techNext}`}>
+                Next.js
+              </span>
+
+              <span className={`${styles.tech} ${styles.techJs}`}>JS</span>
+
+              <span className={`${styles.tech} ${styles.techPy}`}>Py</span>
+            </div>
+
+            <div className={styles.identityBottom}>
+              <div>
+                <span>تمرکز فعلی</span>
+                <strong>Web Development</strong>
+              </div>
+
+              <div className={styles.status}>
+                <span></span>
+                در حال یادگیری
+              </div>
             </div>
           </div>
 
-          <div className={styles.highlights}>
-            {highlights.map((item) => (
-              <div className={styles.highlight} key={item.number}>
-                <span className={styles.highlightNumber}>{item.number}</span>
-
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+          <div className={styles.rightColumn}>
+            <div className={styles.stats}>
+              {stats.map((stat) => (
+                <div className={styles.stat} key={stat.label}>
+                  <strong>{stat.number}</strong>
+                  <span>{stat.label}</span>
                 </div>
+              ))}
+            </div>
+
+            <div className={styles.journey}>
+              <div className={styles.journeyHeader}>
+                <span>مسیر من</span>
+
+                <span className={styles.journeyLine}></span>
               </div>
-            ))}
+
+              <div className={styles.journeyItems}>
+                {journey.map((item) => (
+                  <div className={styles.journeyItem} key={item.year}>
+                    <span className={styles.journeyNumber}>{item.year}</span>
+
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <Link href="#contact" className={styles.cta}>
+              <span>اگر پروژه‌ای در ذهن داری، صحبت کنیم</span>
+              <span className={styles.ctaArrow}>←</span>
+            </Link>
           </div>
         </div>
       </div>

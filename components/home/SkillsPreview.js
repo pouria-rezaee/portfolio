@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Container from "../layout/Container";
 import { skills } from "@/data/skills";
 import styles from "./SkillsPreview.module.css";
@@ -20,11 +19,6 @@ export default function SkillsPreview() {
               استفاده می‌کنم.
             </p>
           </div>
-
-          <Link href="/skills" className={styles.moreLink}>
-            مشاهده همه مهارت‌ها
-            <span>←</span>
-          </Link>
         </div>
 
         <div className={styles.skillsGrid}>
