@@ -4,8 +4,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Haj_EbLiS | Portfolio",
-  description: "Personal portfolio website",
+  title: "پورتفولیوی پوریا",
+  description: "پورتفولیوی شخصی پوریا، توسعه‌دهنده وب",
 };
 
 export default function RootLayout({ children }) {
@@ -13,9 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <body>
         <Navbar />
-
         <main>{children}</main>
-
         <Footer />
       </body>
     </html>

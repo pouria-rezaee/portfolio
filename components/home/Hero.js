@@ -6,25 +6,25 @@ export default function Hero() {
     <section className="hero">
       <Container>
         <div className="hero-content">
-          <p className="hero-eyebrow">Hello, I'm Pouria</p>
+          <p className="hero-eyebrow">سلام، من پوریا هستم</p>
 
           <h1 className="hero-title">
-            I build modern
-            <span> digital experiences.</span>
+            ایده‌ها را به
+            <span>تجربه‌های دیجیتال تبدیل می‌کنم.</span>
           </h1>
 
           <p className="hero-description">
-            I'm a developer focused on building modern, functional and
-            user-friendly web applications.
+            توسعه‌دهنده‌ای علاقه‌مند به ساخت وب‌سایت‌ها و اپلیکیشن‌های مدرن،
+            کاربردی و کاربرپسند.
           </p>
 
           <div className="hero-actions">
             <Link href="/projects" className="btn btn-primary">
-              View My Work
+              مشاهده پروژه‌ها
             </Link>
 
             <Link href="/contact" className="btn btn-secondary">
-              Contact Me
+              تماس با من
             </Link>
           </div>
         </div>

@@ -11,7 +11,7 @@ export default function Navbar() {
     { label: "درباره من", href: "/about" },
     { label: "پروژه‌ها", href: "/projects" },
     { label: "مهارت‌ها", href: "/skills" },
-    { label: "تماس", href: "/contact" },
+    { label: "تماس با من", href: "/contact" },
   ];
 
   return (
