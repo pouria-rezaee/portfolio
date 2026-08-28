@@ -1,0 +1,164 @@
+.section {
+  padding: 120px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 70px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.title {
+  max-width: 700px;
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+
+.title span {
+  color: var(--color-primary);
+}
+
+.intro {
+  max-width: 500px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 2;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 28px;
+}
+
+.storyNumber {
+  color: var(--color-border);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.story h3 {
+  margin: 0 0 22px;
+  font-size: 1.6rem;
+}
+
+.story p {
+  margin: 0 0 18px;
+  color: var(--color-text-muted);
+  line-height: 2;
+  font-size: 1rem;
+}
+
+.moreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  color: var(--color-text);
+  font-weight: 700;
+  transition:
+    color var(--transition-fast),
+    gap var(--transition-fast);
+}
+
+.moreLink:hover {
+  color: var(--color-primary);
+  gap: 16px;
+}
+
+.moreLink span {
+  font-size: 1.1rem;
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.highlight {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--color-border);
+  transition:
+    padding var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.highlight:hover {
+  padding-inline: 10px;
+}
+
+.highlightNumber {
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.highlight h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.highlight p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .storyNumber {
+    font-size: 1.5rem;
+  }
+
+  .highlight {
+    grid-template-columns: 40px 1fr;
+  }
+}

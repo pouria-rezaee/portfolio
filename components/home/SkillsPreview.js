@@ -1,37 +1,51 @@
 import Link from "next/link";
 import Container from "../layout/Container";
 import { skills } from "@/data/skills";
+import styles from "./SkillsPreview.module.css";
 
 export default function SkillsPreview() {
   return (
-    <section className="section skills-preview">
+    <section className={styles.section} id="skills">
       <Container>
-        <div className="section-heading section-heading-row">
+        <div className={styles.heading}>
           <div>
-            <p className="section-label">مهارت‌ها</p>
+            <p className={styles.label}>مهارت‌ها</p>
 
-            <h2 className="section-title">
+            <h2 className={styles.title}>
               فناوری‌هایی که با آن‌ها کار می‌کنم.
             </h2>
+
+            <p className={styles.description}>
+              مجموعه‌ای از تکنولوژی‌ها و ابزارهایی که در توسعه پروژه‌های وب
+              استفاده می‌کنم.
+            </p>
           </div>
 
-          <Link href="/skills" className="text-link">
-            مشاهده همه مهارت‌ها ←
+          <Link href="/skills" className={styles.moreLink}>
+            مشاهده همه مهارت‌ها
+            <span>←</span>
           </Link>
         </div>
 
-        <div className="skills-box">
+        <div className={styles.skillsGrid}>
           {skills.map((skill) => (
-            <div className="skill-box" key={skill.name}>
-              <span className="skill-title">{skill.name}</span>
-
-              <div className="skill-bar">
-                <div
-                  className={`skill-per ${skill.className}`}
-                  style={{ "--skill-level": `${skill.level}%` }}
-                >
-                  <span className="tooltip">{skill.level}%</span>
+            <div className={styles.skillCard} key={skill.name}>
+              <div className={styles.skillHeader}>
+                <div className={`${styles.icon} ${styles[skill.className]}`}>
+                  {skill.name.substring(0, 2)}
                 </div>
+
+                <div className={styles.skillInfo}>
+                  <h3>{skill.name}</h3>
+                  <span>{skill.level}%</span>
+                </div>
+              </div>
+
+              <div className={styles.progressTrack}>
+                <div
+                  className={`${styles.progressBar} ${styles[skill.className]}`}
+                  style={{ "--skill-level": `${skill.level}%` }}
+                />
               </div>
             </div>
           ))}
