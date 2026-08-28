@@ -1,5 +1,7 @@
 @import "../styles/reset.css";
 @import "../styles/variables.css";
+@import "../styles/components.css";
+@import "../styles/responsive.css";
 
 html {
   scroll-behavior: smooth;
@@ -14,8 +16,6 @@ body {
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
