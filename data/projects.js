@@ -24,7 +24,7 @@ export const projects = [
     longDescription:
       "این پروژه یک فروشگاه اینترنتی با رابط کاربری مدرن است که با تمرکز بر ساختار مناسب صفحات، نمایش محصولات و تجربه کاربری طراحی شده است.",
     technologies: ["React", "JavaScript", "CSS"],
-    image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/projects/store.jpg`,
+    image: "/portfolio/images/projects/ecommerce.png",
     featured: true,
     github: "#",
     demo: "#",
@@ -38,7 +38,7 @@ export const projects = [
     longDescription:
       "یک وبلاگ شخصی با طراحی مینیمال که برای انتشار و دسته‌بندی مطالب و ایجاد یک تجربه مطالعه مناسب ساخته شده است.",
     technologies: ["Next.js", "React", "CSS"],
-    image: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/projects/blog.jpg`,
+    image: "/portfolio/images/projects/blog.png",
     featured: true,
     github: "#",
     demo: "#",
