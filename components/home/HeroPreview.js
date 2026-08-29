@@ -115,8 +115,8 @@ export default function Hero() {
               <h2 className={styles.blockTitle}>معرفی کوتاه</h2>
 
               <p className={styles.blockText}>
-                توسعه‌دهنده وب. تمرکز من روی ساخت تجربه‌های مدرن، سریع و کاربردی
-                است.
+                توسعه دهنده وب. تمرکز من بر روی ساخت وبسایت های مدرن، واکنشگرا ،
+                سریع و زیبا است.
               </p>
             </div>
 
