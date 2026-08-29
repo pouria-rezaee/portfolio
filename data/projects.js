@@ -9,7 +9,7 @@ export const projects = [
     longDescription:
       "CityBus Tracker یک سامانه مدیریت حمل‌ونقل شهری است که با هدف بهبود تجربه مسافران و مدیریت بهتر ناوگان طراحی شده است. این پروژه امکان مشاهده موقعیت اتوبوس‌ها روی نقشه، بررسی مسیرها و ارائه اطلاعات کاربردی درباره ناوگان را فراهم می‌کند.",
     technologies: ["Next.js", "React", "JavaScript", "Leaflet"],
-   image: "/portfolio/images/projects/citybus.png",
+    image: "/portfolio/images/projects/citybus-v2.png",
     featured: true,
     github: "#",
     demo: "https://mu-bus-app.vercel.app",
