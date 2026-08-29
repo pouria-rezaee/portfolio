@@ -34,14 +34,11 @@ export default function ProjectsPreview() {
                 className={styles.projectImage}
                 aria-label={project.title}
               >
-                <div
-                  className={`${styles.projectImagePlaceholder} ${
-                    styles[`tone${(project.id % 3) + 1}`]
-                  }`}
-                  aria-hidden="true"
-                >
-                  <span>{project.title.slice(0, 1)}</span>
-                </div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={styles.projectImageImg}
+                />
 
                 <div className={styles.imageOverlay}>
                   <span>مشاهده پروژه</span>
