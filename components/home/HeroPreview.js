@@ -99,9 +99,8 @@ export default function Hero() {
                 src={`${process.env.NODE_ENV === "production" ? "/portfolio" : ""}/images/profile/myself2.jpg`}
                 alt="پوریا رضایی"
                 fill
-                priority
-                sizes="(max-width: 700px) 70vw, 400px"
-                className={styles.profileImage}
+                sizes="(max-width: 800px) 100vw, 50vw"
+                className={styles.photo}
               />
 
               <div className={styles.imageOverlay}></div>
