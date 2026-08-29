@@ -100,7 +100,7 @@ export default function AboutPreview() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <Image
-              src="/images/profile/myself2.jpg"
+              src={`${process.env.NODE_ENV === "production" ? "/portfolio" : ""}/images/profile/myself2.jpg`}
               alt="پوریا رضایی"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"

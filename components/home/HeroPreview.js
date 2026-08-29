@@ -96,7 +96,7 @@ export default function Hero() {
 
             <div className={styles.imageWrapper}>
               <Image
-                src="/images/profile/myself2.jpg"
+                src={`${process.env.NODE_ENV === "production" ? "/portfolio" : ""}/images/profile/myself2.jpg`}
                 alt="پوریا رضایی"
                 fill
                 priority
