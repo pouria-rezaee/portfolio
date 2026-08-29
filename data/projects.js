@@ -16,8 +16,8 @@ export const projects = [
   },
   {
     id: 2,
-    title: "فروشگاه اینترنتی",
-    slug: "ecommerce - coming soon",
+    title: "فروشگاه اینترنتی - coming soon",
+    slug: "ecommerce",
     category: "وب",
     description:
       "یک فروشگاه اینترنتی مدرن با تمرکز بر طراحی رابط کاربری و تجربه کاربری.",
