@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 
 const navItems = [
-  { href: "/#home", label: "خانه" },
-  { href: "/#about", label: "درباره من" },
-  { href: "/#skills", label: "مهارت‌ها" },
-  { href: "/#projects", label: "پروژه‌ها" },
-  { href: "/#contact", label: "تماس" },
+  { href: "#home", label: "خانه" },
+  { href: "#about", label: "درباره من" },
+  { href: "#skills", label: "مهارت‌ها" },
+  { href: "#projects", label: "پروژه‌ها" },
+  { href: "#contact", label: "تماس" },
 ];
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
   const [activeHash, setActiveHash] = useState("home");
 
   useEffect(() => {
-    const sectionIds = navItems.map((item) => item.href.replace("/#", ""));
+    const sectionIds = navItems.map((item) => item.href.replace("#", ""));
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
@@ -40,7 +40,9 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleNavClick = () => {
@@ -60,7 +62,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={`${styles.navLink} ${
-                    activeHash === item.href.replace("/#", "")
+                    activeHash === item.href.replace("#", "")
                       ? styles.active
                       : ""
                   }`}
