@@ -16,7 +16,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "فروشگاه اینترنتی - coming soon",
+    title: "فروشگاه اینترنتی - به زودی",
     slug: "ecommerce",
     category: "وب",
     description:
@@ -31,7 +31,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "وبلاگ شخصی - coming soon",
+    title: "وبلاگ شخصی - به زودی",
     slug: "personal-blog",
     category: "وب",
     description: "وبلاگی ساده و مدرن برای انتشار مطالب و مدیریت محتوای شخصی.",
