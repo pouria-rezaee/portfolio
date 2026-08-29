@@ -12,6 +12,12 @@ export const skills = [
     className: "css",
   },
   {
+    name: "tailwind",
+    category: "Frontend",
+    level: 70,
+    className: "tailwind",
+  },
+  {
     name: "JavaScript",
     category: "Frontend",
     level: 70,

@@ -1,7 +1,7 @@
 .contact {
-  padding-bottom: 120px;
+  padding: 100px 0 120px;
+  border-top: none;
 }
-
 .contactCard {
   width: 100%;
   padding: 50px;

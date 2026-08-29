@@ -12,21 +12,9 @@ const typingTexts = [
   "توسعه‌دهنده Next.js",
 ];
 
-const techs = [
-  { name: "React", className: "react", icon: "⚛️" },
-  { name: "Next.js", className: "next", icon: "▲" },
-  { name: "Python", className: "python", icon: "🐍" },
-  { name: "Tailwind", className: "tailwind", icon: "🎨" },
-];
+const languages = ["Next.js", "React", "Javascript", "tailwind", "mongodb"];
 
-const interests = [
-  "🎨 طراحی UI/UX",
-  "🤖 هوش مصنوعی",
-  "🌐 توسعه وب",
-  "🎵 موسیقی",
-  "🎮 بازی",
-  "📖 مطالعه",
-];
+const hobbies = ["UI / UX", "volleyball", "coding", "music", "game", "reading"];
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -61,14 +49,14 @@ export default function Hero() {
     <section className={styles.hero} id="home">
       <div className="container">
         <div className={styles.heroLayout}>
-          {/* =========================
-              Right Side
-          ========================= */}
+          {/* ==================================================
+              RIGHT — INTRO
+          ================================================== */}
           <div className={styles.rightSide}>
-            <div className={styles.badge}>
+            {/* <div className={styles.badge}>
               <span className={styles.badgeDot}></span>
-              در دسترس همکاری
-            </div>
+              توسعه‌دهنده فرانت‌اند
+            </div> */}
 
             <h1 className={styles.title}>
               سلام، من
@@ -77,52 +65,17 @@ export default function Hero() {
             </h1>
 
             <div className={styles.typewriter}>
-              <span>{text}</span>
-              <i></i>
+              <span className={styles.typewriterRole}>
+                {text}
+                <i></i>
+              </span>
             </div>
 
             <p className={styles.description}>
               یک توسعه‌دهنده وب با تمرکز روی ساخت رابط‌های کاربری مدرن، سریع و
-              تجربه‌محور؛ علاقه‌مند به ترکیب طراحی، تکنولوژی و تجربه کاربری برای
-              ساخت محصولات دیجیتال بهتر.
+              کاربردی؛ علاقه‌مند به ترکیب تکنولوژی، طراحی و تجربه کاربری.
             </p>
-          </div>
 
-          {/* =========================
-              Center
-          ========================= */}
-          <div className={styles.centerVisual}>
-            <div className={styles.glow}></div>
-
-            <div className={styles.imageWrapper}>
-              <Image
-                src="/images/profile/myself2.jpg"
-                alt="پوریا رضایی - توسعه‌دهنده فرانت‌اند"
-                fill
-                priority
-                sizes="(max-width: 700px) 70vw, 420px"
-                className={styles.profileImage}
-              />
-
-              <div className={styles.imageOverlay}></div>
-            </div>
-
-            {techs.map((tech, index) => (
-              <div
-                key={tech.name}
-                className={`${styles.techBadge} ${styles[tech.className]}`}
-                style={{ animationDelay: `${index * 0.5}s` }}
-              >
-                {tech.icon} {tech.name}
-              </div>
-            ))}
-          </div>
-
-          {/* =========================
-              Left Side
-          ========================= */}
-          <div className={styles.leftSide}>
-            {/* Buttons */}
             <div className={styles.buttons}>
               <Link href="#projects" className={styles.primaryButton}>
                 مشاهده پروژه‌ها
@@ -133,37 +86,63 @@ export default function Hero() {
                 ارتباط با من
               </Link>
             </div>
+          </div>
 
-            {/* Interests */}
-            <div className={styles.interests}>
-              <div className={styles.sectionHeader}>
-                <span>01</span>
-                <div></div>
-                <h3>علاقه‌مندی‌ها</h3>
-              </div>
+          {/* ==================================================
+              CENTER — PROFILE IMAGE
+          ================================================== */}
+          <div className={styles.centerVisual}>
+            <div className={styles.glow}></div>
 
-              <div className={styles.interestList}>
-                {interests.map((interest) => (
-                  <span key={interest}>{interest}</span>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/images/profile/myself2.jpg"
+                alt="پوریا رضایی"
+                fill
+                priority
+                sizes="(max-width: 700px) 70vw, 400px"
+                className={styles.profileImage}
+              />
+
+              <div className={styles.imageOverlay}></div>
+            </div>
+          </div>
+
+          {/* ==================================================
+              LEFT — BADGE / HOBBIES / LANGUAGES
+          ================================================== */}
+          <div className={styles.leftSide}>
+            {/* Badge */}
+            <div className={styles.infoBlock}>
+              <h2 className={styles.blockTitle}>معرفی کوتاه</h2>
+
+              <p className={styles.blockText}>
+                توسعه‌دهنده وب و علاقه‌مند به طراحی رابط کاربری. تمرکز من روی
+                ساخت تجربه‌های مدرن، سریع و کاربردی است.
+              </p>
+            </div>
+
+            {/* Hobbies */}
+            <div className={styles.infoBlock}>
+              <h2 className={styles.blockTitle}>سرگرمی ها</h2>
+
+              <div className={styles.pillGrid}>
+                {hobbies.map((item) => (
+                  <span key={item} className={styles.pill}>
+                    {item}
+                  </span>
                 ))}
               </div>
             </div>
 
-            {/* Tech Skills */}
-            <div className={styles.techSection}>
-              <div className={styles.sectionHeader}>
-                <span>02</span>
-                <div></div>
-                <h3>تخصص‌های فنی</h3>
-              </div>
+            {/* Languages */}
+            <div className={styles.infoBlock}>
+              <h2 className={styles.blockTitle}>ابزار کار</h2>
 
-              <div className={styles.techList}>
-                {techs.map((tech) => (
-                  <span
-                    key={tech.name}
-                    className={`${styles.techItem} ${styles[tech.className]}`}
-                  >
-                    {tech.icon} {tech.name}
+              <div className={styles.pillGrid}>
+                {languages.map((item) => (
+                  <span key={item} className={styles.pill}>
+                    {item}
                   </span>
                 ))}
               </div>
